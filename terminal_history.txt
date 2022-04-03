@@ -1,0 +1,50 @@
+  801  python app.py
+  802  python app.py
+  803  python app.py
+  804  python app.py
+  805  git status
+  806  git add .
+  807  git status
+  808  git commit -m "Updated the user interface in save_qualifying_loans.py so that it prompts the user asking if they would like to save the loans they qualify for and where they would like to save them to."
+  809  git push
+  810  python app.py
+  811  python app.py
+  812  ls
+  813  git status
+  814  git add -A
+  815  git status
+  816  git commit -m "Added comments to save_qualifying_loans.py to better explain the functionality. Updated README.md file to reflect the proper usage of the application."
+  817  git push
+  818  mv data ..
+  819  ls
+  820  cd ..
+  821  ls
+  822  cd loan_qualifier_app/
+  823  mv images ..
+  824  mv qualifier ..
+  825  mv README.md ..
+  826  ls
+  827  mv app.py ..
+  828  ls
+  829  cd ..
+  830  ls
+  831  rm -r loan_qualifier_app/
+  832  ls
+  833  python app.py 
+  834  ls
+  835  git status
+  836  git add -A
+  837  git status
+  838  git commit -m "Deleted an unecesary folder and moved all files into the main folder."
+  839  git push
+  840  python app.py 
+  841  python app.py 
+  842  python app.py 
+  843  python app.py 
+  844  git status
+  845  git add .
+  846  git status
+  847  git commit -m "Updated the save_qualifying_loans.py file so that if the user qualifies for zero loans, then the program will notify the user and exit the application."
+  848  git push
+  849  ls
+  850  history 50 > terminal_history.txt
