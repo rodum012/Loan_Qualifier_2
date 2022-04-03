@@ -1,33 +1,71 @@
-# Project Title
+# Loan Qualifier V.2.0
 
-Just after the title, introduce your project by describing attractively what the project is about and what is the main problem that inspires you to create this project or what is the main contribution for the potential user of your project.
+This application determines what banks the user would qualify for a loan at based on the user input criteria of credit score, income, debt amount, loan amount requested, and home value. The bank information is called from the daily rate sheet csv file. The resulting loans the user qualifies for can then be saved as a csv file to the location of the user's choosing.
 
 ---
 
 ## Technologies
 
-Describe the technologies required to use your project such as programming languages, libraries, frameworks, and operating systems. Be sure to include the specific versions of any critical dependencies that you have used in the stable version of your project.
+This application is written in Python v. 3.9.7 and uses the following libraries:
+
+[fire](https://readthedocs.org/projects/python-fire/) was used for command line interface
+
+[questionary](https://questionary.readthedocs.io/en/stable/) was used to prompt the user for input
+
+[csv](https://docs.python.org/3/library/csv.html) was used in order to read and create csv files
+
+[pathlib](https://docs.python.org/3/library/pathlib.html) was used to call on various files and to save the resulting csv file
+
+[sys](https://docs.python.org/3/library/sys.html) was used to exit the application
 
 ---
 
 ## Installation Guide
 
-In this section, you should include detailed installation notes containing code blocks and screenshots.
+Prior to running this application, perform the following in the command line to install the required libraries:
+
+`pip install fire`
+
+`pip install questionary`
+
+`pip install csv`
+
+`pip install pathlib`
+
+`pip install sys`
 
 ---
 
 ## Usage
 
-This section should include screenshots, code blocks, or animations explaining how to use your project.
+In order to launch the application, type into the command line:
+
+```python 
+Python app.py
+```
+
+The user will then be prompted to input the file path to the csv containing the bank data, i.e. the daily rate sheet file. Next, the user will be prompted to input their credit score, debt amount, income, loan amount, and home value. Following these entries, the program will output the monthly debt to income ratio, the loan to value ratio, and the number of qualifying loans found given the criteria. The user will then be prompted asking whether they would like to save the resulting loans they qualify for. If the user selects 'yes', then they will also be prompted for the filepath they would like to save the loans to as a csv file.
+
+Here is an example of input criteria and the resulting output of the application:
+
+![Output](images/loan_output.png)
+
+Here is where the qualifying loans csv was saved to:
+
+![Output2](images/new_csv.png)
+
+Here is the resulting loan data:
+
+![Output3](images/qualifying_loan_image.png)
 
 ---
 
 ## Contributors
 
-In this section, list all the people who contribute to this project. You might want recruiters or potential collaborators to reach you, so include your contact email and, optionally, your LinkedIn or Twitter profile.
+Robby Odum, Email: rodum012@gmail.com
 
 ---
 
 ## License
 
-When you share a project on a repository, especially a public one, it's important to choose the right license to specify what others can and can't with your source code and files. Use this section to include the license you want to use.
+MIT

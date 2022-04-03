@@ -8,7 +8,9 @@ def save_qualifying_loans(qualifying_loans):
         qualifying_loans (list of lists): The qualifying bank loans.
     """
     # @TODO: Complete the usability dialog for savings the CSV Files.
+    #Asks user if they would like to save the results of the loans they qualiff for
     user_answer = questionary.confirm("Would you like to save your qualifying loans?").ask()
+    #checks if the user responded 'yes', and runs the below code if they did
     if user_answer == True:
          #Creates header for CSV file
         header = ['Lender','Max Loan Amount','Max LTV', 'Max DTI', 'Min Credit Score', 'Interest Rate']
