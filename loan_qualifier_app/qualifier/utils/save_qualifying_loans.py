@@ -1,4 +1,5 @@
 import csv
+import questionary
 
 def save_qualifying_loans(qualifying_loans):
     """Saves the qualifying loans to a CSV file.
@@ -7,12 +8,16 @@ def save_qualifying_loans(qualifying_loans):
         qualifying_loans (list of lists): The qualifying bank loans.
     """
     # @TODO: Complete the usability dialog for savings the CSV Files.
-    #Creates header for CSV file
-    header = ['Lender','Max Loan Amount','Max LTV', 'Max DTI', 'Min Credit Score', 'Interest Rate']
-    #Opens new csv file called qualifying_loans.csv
-    with open('./data/qualifying_loans.csv','w',newline='') as csvfile: 
-        csvwriter = csv.writer(csvfile)
-        csvwriter.writerow(header)    
-        #iterates through each qualifying loans and saves it as a row in the csv file
-        for loan in qualifying_loans:
-            csvwriter.writerow(loan)
+    user_answer = questionary.confirm("Would you like to save your qualifying loans?").ask()
+    if user_answer == True:
+         #Creates header for CSV file
+        header = ['Lender','Max Loan Amount','Max LTV', 'Max DTI', 'Min Credit Score', 'Interest Rate']
+        file_path = questionary.text("Input the filepath (including the name of the file.csv) for where you would like the results saved to (ex: ./data/qualifying_loans.csv): ").ask()
+        file_path = str(file_path)
+        #Opens new csv file called qualifying_loans.csv
+        with open(file_path,'w',newline='') as csvfile: 
+            csvwriter = csv.writer(csvfile)
+            csvwriter.writerow(header)    
+            #iterates through each qualifying loans and saves it as a row in the csv file
+            for loan in qualifying_loans:
+                csvwriter.writerow(loan)
